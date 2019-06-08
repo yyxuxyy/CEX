@@ -6,9 +6,11 @@ int main()
 {
 
 
+//printf("%d\n",getchar()!=EOF);
 
-
-
+char c;
+c=EOF;
+printf("%d\n",c);
 
 system("pause");
     return 0;
