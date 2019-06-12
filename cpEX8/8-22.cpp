@@ -9,7 +9,7 @@ int main()
     cout << "enter a string: ";
     cin >> string1;
     cout << mystery2(string1) << endl;
-    cin.get();
+    system("pause");
     return 0;
 }
 
