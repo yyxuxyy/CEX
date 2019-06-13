@@ -1,28 +1,23 @@
 #include <stdio.h>
 #define MAXLINE 1000
+#define LongLine 80
 
 int get_line(char line[], int maxline);
-void copy(char to[], char from[]);
+//void copy(char to[], char from[]);
 
 int main()
 {
 
-    int len, max;
+    int len;
     char line[MAXLINE];
-    char longest[MAXLINE];
-
-    max = 0;
-    while ((len = get_line(line, MAXLINE)) > 0)
+    
+    while((len=get_line(line,MAXLINE))>0)
     {
         printf("%d,%s",len,line);
-        if (len > max)
-        {
-            max = len;
-            copy(longest, line);
-        }
+        if(len>LongLine)
+        printf("%s\n",line);
     }
-    if (max > 0)
-        printf("%s", longest);
+   
 
     return 0;
 }
@@ -40,12 +35,4 @@ int get_line(char s[], int lim)
     }
     s[i] = '\0';
     return i;
-}
-void copy(char to[], char from[])
-{
-    int i = 0;
-    while ((to[i] = from[i]) != '\0')
-    {
-        ++i;
-    }
 }

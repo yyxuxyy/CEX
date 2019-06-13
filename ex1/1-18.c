@@ -2,28 +2,15 @@
 #define MAXLINE 1000
 
 int get_line(char line[], int maxline);
-void copy(char to[], char from[]);
-
+int remove(char s[]);
 int main()
 {
 
-    int len, max;
+    // int len, max;
     char line[MAXLINE];
-    char longest[MAXLINE];
-
-    max = 0;
-    while ((len = get_line(line, MAXLINE)) > 0)
-    {
-        printf("%d,%s",len,line);
-        if (len > max)
-        {
-            max = len;
-            copy(longest, line);
-        }
-    }
-    if (max > 0)
-        printf("%s", longest);
-
+    while (get_line(line, MAXLINE) > 0)
+        if (remove(line) > 0)
+            printf("%s", line);
     return 0;
 }
 int get_line(char s[], int lim)
@@ -41,11 +28,22 @@ int get_line(char s[], int lim)
     s[i] = '\0';
     return i;
 }
-void copy(char to[], char from[])
+int remove(char s[])
 {
     int i = 0;
-    while ((to[i] = from[i]) != '\0')
+    while (s[i] != '\n')
     {
         ++i;
     }
+    i--;
+    while (i >= 0 && (s[i] == ' ' || s[i] == '\t'))
+        --i;
+    if (i >= 0)
+    {
+        ++i;
+        s[i] = '\n';
+        ++i;
+        s[i] = '\0';
+    }
+    return i;
 }

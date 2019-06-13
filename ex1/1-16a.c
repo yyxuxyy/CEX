@@ -1,3 +1,4 @@
+//it has no difference to 1-16.c
 #include <stdio.h>
 #define MAXLINE 1000
 
@@ -28,17 +29,24 @@ int main()
 }
 int get_line(char s[], int lim)
 {
-    int c, i;
-    for (i = 0; (i < lim - 1) && (c = getchar()) != EOF && (c != '\n'); i++)
+    int c, i,j;
+    j=0;
+    for (i = 0; (c = getchar()) != EOF && (c != '\n'); i++)
     {
-        s[i] = c;
+       if (i<lim-2)
+       {
+         s[j]=c;
+         ++j;  /* code */
+       }
+       
     }
     if (c == '\n')
     {
-        s[i] = c;
-        ++i;
+       s[j]=c;
+       ++j;
+       ++i;
     }
-    s[i] = '\0';
+    s[j] = '\0';
     return i;
 }
 void copy(char to[], char from[])
