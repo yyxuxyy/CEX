@@ -1,9 +1,39 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
+            "label": "build & debug file",
             "type": "shell",
-            "label": "gcc.exe build active file",
-            "command": "D:\\mingw64\\bin\\gcc.exe",
+            "command": "g++",
+            "args": [
+                "-g",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "build & run file",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "type": "shell",
+            "label": "g++.exe build active file",
+            "command": "D:\\mingw64\\bin\\g++.exe",
             "args": [
                 "-g",
                 "${file}",
@@ -12,8 +42,10 @@
             ],
             "options": {
                 "cwd": "D:\\mingw64\\bin"
-            }
+            },
+            "problemMatcher": [
+                "$gcc"
+            ]
         }
-    ],
-    "version": "2.0.0"
+    ]
 }
