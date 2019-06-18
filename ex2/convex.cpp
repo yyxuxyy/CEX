@@ -71,7 +71,7 @@ int main()
         pt.x -= x_min;
         pt.y -= y_min;
     }
-    //排序的核心思想是？
+    //排序的核心思想是？ptstart为极点，pts各点按发散角度从小到大排列
     sort(pts.begin(), pts.end(), [](Point<int> &p1, Point<int> &p2) {
         if (p1.x * p2.y == p1.y * p2.x)
         {
@@ -90,7 +90,7 @@ int main()
         }
         else
         {
-            st.pop_back();
+            st.pop_back();//pop_back()后，i不变重新进入循环
         }
     }
     for (auto &i : st)
