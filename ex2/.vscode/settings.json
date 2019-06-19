@@ -2,5 +2,7 @@
     "files.associations": {
         "stdlib.h": "c"
     },
-    "editor.fontFamily": "'Source Code Pro',Consolas, 'Courier New', monospace"
+    "editor.fontFamily": "'Source Code Pro',Consolas, 'Courier New', monospace",
+    "C_Cpp.errorSquiggles": "Disabled",
+    "git.ignoreLimitWarning": true
 }

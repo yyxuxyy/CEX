@@ -21,7 +21,7 @@ bool isLeftTurn(Point<T> &p0, Point<T> &p1, Point<T> &p2)
     return (p1.x - p0.x) * (p2.y - p0.y) >= (p1.y - p0.y) * (p2.x - p0.x);
 }
 
-//pq为有向线，r为判断点，判断r是否位于pq线左侧
+//pq为有向线，r为判断点，判断r是否位于pq线左侧 >=表明承认共线点
 template <typename T>
 bool isLeftTurn2(Point<T> &p, Point<T> &q, Point<T> &r)
 {
