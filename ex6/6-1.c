@@ -21,6 +21,7 @@ int main()
 }
 int getword(char *word, int lim)
 {
+    
     return 0;
 }
 int binsearch(char *word, struct Key tab[], int n)
