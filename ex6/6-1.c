@@ -9,13 +9,13 @@
 
 struct Key
 {
-    char *word;
+    const char *word;
     int count;
 } keytab[NKEYS] =
     {{"auto", 0}, {"break", 0}, {"case", 0}, {"char", 0}, {"const", 0}, {"continue", 0}, {"default", 0}, {"unsigned", 0}, {"void", 0}, {"violate", 0}, {"while", 0}};
 
 int getword(char *, int);
-int binsearch(char *, struct Key *, int);
+int binsearch(const char *, struct Key *, int);
 int main()
 {
     int n;
@@ -30,6 +30,9 @@ int main()
     for (n = 0; n < NKEYS; n++)
         if (keytab[n].count > 0)
             printf("%4d %s\n", keytab[n].count, keytab[n].word);
+
+    // while (getword(word, MAXWORD) != EOF)
+    //     printf("%d ", strcmp(word,keytab[0].word));
 
     return 0;
 }
@@ -47,17 +50,17 @@ int getword(char *word, int lim)
         return c;
     }
     for (; --lim > 0; w++)
-    {
+
         if (!isalnum(*w = getch()))
         {
             ungetch(*w);
             break;
         }
-    }
+
     *w = '\0';
     return word[0];
 }
-int binsearch(char *word, struct Key tab[], int n)
+int binsearch(const char *word, struct Key tab[], int n)
 {
     int cond;
     int low, high, mid;

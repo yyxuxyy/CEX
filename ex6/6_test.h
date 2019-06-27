@@ -1,8 +1,8 @@
 #include <stdio.h>
-#include <stdlib.h>
+
 #define BUFSIZE 100
 
-char buf[BUFSIZE];
+char buf[BUFSIZE]={0};
 int bufp = 0;
 int getch(void)
 {

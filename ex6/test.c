@@ -4,6 +4,6 @@
 int main()
 {
     printf("%d\n", strcmp("hello", "nimabi"));
-    printf("%d\n", strcmp("nimabi", "hel"));
+    printf("%d\n", strcmp("nimabi", "helSFADFADS"));
     return 0;
 }
