@@ -5,13 +5,13 @@
 #include "6_test.h"
 
 #define MAXWORD 1000
-#define NKEYS 100
+//#define NKEYS 100
 
 struct Key
 {
     const char *word;
     int count;
-} keytab[NKEYS] =
+} keytab[] =
     {{"auto", 0}, {"break", 0}, {"case", 0}, {"char", 0}, {"const", 0}, {"continue", 0}, {"default", 0}, {"unsigned", 0}, {"void", 0}, {"violate", 0}, {"while", 0}};
 
 int getword(char *, int);
@@ -21,6 +21,7 @@ int main()
     int n;
     char word[MAXWORD];
 
+    int NKEYS = sizeof(keytab) / sizeof(keytab[0]);
     while (getword(word, MAXWORD) != EOF)
     {
         if (isalpha(word[0]))
