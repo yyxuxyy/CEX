@@ -3,7 +3,7 @@
 #include <algorithm>
 
 using namespace std;
-int n = 9;//n皇后
+int n = 8;//n皇后
 int a[100] = {0}; //如：a[2]=4表示该皇后位于（2,4)位置上
 int sum = 0;
 bool judge(int a[], int N)//判断位置合法性
