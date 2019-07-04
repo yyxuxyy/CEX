@@ -21,13 +21,12 @@ int main1()
 int main()
 {
 
-string s("Dragon Land");
+    string s("Dragon Land");
 
-string s1;
-s1.assign(s);
-s1.assign(s,4,2);
-cout<<s1<<endl;
-
+    string s1;
+    s1.assign(s);
+    s1.assign(s, 4, 2);
+    cout << s1 << endl;
 
     cin.get();
     return 0;
