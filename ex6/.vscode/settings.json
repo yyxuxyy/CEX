@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "conio.h": "c"
     },
     "editor.fontFamily": "'Source Code Pro',Consolas, 'Courier New', monospace"
 }
