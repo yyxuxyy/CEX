@@ -1,10 +1,33 @@
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 #include "ctype.h"
 void reverse(char s[]);
+void reverse2(char *p1);
+void reverse3(char *p, char *to)
+{
+    if (p == NULL)
+        return;
+    if (*p == '\0')
+        return;
+    reverse3(p + 1, to);
+    strncat(to, p, 1);
+}
+char buf[1000];
 int main()
 {
 
+    char la[100] = "abcdefghijk";
+    reverse(la);
+    printf("%s\n", la);
+    memset(buf, 0, sizeof(buf));
+    reverse2(la);
+    printf("%s\n", buf);
+    {
+        char mybuf[1024] = {0};
+        reverse3(la, mybuf);
+        printf("%s", mybuf);
+    }
     return 0;
 }
 
@@ -78,7 +101,7 @@ void itoa(int n, char s[])
     reverse(s);
 }
 
-void reverse(char s[])//非0部分字符串首尾交换
+void reverse(char s[]) //非0部分字符串首尾交换
 {
     int c, i, j;
     for (i = 0, j = strlen(s) - 1; i < j; i++, j--)
@@ -87,4 +110,14 @@ void reverse(char s[])//非0部分字符串首尾交换
         s[i] = s[j];
         s[j] = c;
     }
+}
+void reverse2(char *p)
+{
+    if (p == NULL)
+        return;
+    if (*p == '\0')
+        return;
+    reverse2(p + 1);
+    // strcat(buf,p);
+    strncat(buf, p, 1);
 }
